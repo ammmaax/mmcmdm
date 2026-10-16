@@ -68,15 +68,6 @@ public:
              << "  Course: " << course << endl;
     }
 };
-ostream& operator<<(ostream& out, const Student& obj)
-{
-    out << "Name: " << obj.GetName()
-        << "  Age: " << obj.GetAge()
-        << "  Course: " << obj.GetCourse();
-
-    return out;
-}
-
 istream& operator>>(istream& in, Student& obj)
 {
     string name;
@@ -99,6 +90,14 @@ istream& operator>>(istream& in, Student& obj)
     }
 
     return in;
+}
+ostream& operator<<(ostream& out, const Student& obj)
+{
+    out << "Name: " << obj.GetName()
+        << "  Age: " << obj.GetAge()
+        << "  Course: " << obj.GetCourse();
+
+    return out;
 }
 
 Student operator++(Student& obj, int)
